@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
-    public function testProduct()
+    public function testProduct1()
     {
         $product1= Product::find(1);
         echo 'product1: '.$product1->title;
@@ -18,5 +18,12 @@ class TestController extends Controller
         foreach ($details as $d ){
             dump($d->detailTitle);
     }
+    }
+    public function testProduct()
+    {   $detailName = '16';
+        $product = Product::whereHas('details', function ($query) use ($detailName) {
+            $query->where('value','like', "%{$detailName}%");
+        })->paginate(10);
+        dump($product);
     }
 }
