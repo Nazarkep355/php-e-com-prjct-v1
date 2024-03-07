@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Filters\ProductFilter;
+use App\Http\Requests\Product\FilterRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -19,11 +21,11 @@ class TestController extends Controller
             dump($d->detailTitle);
     }
     }
-    public function testProduct()
-    {   $detailName = '16';
-        $product = Product::whereHas('details', function ($query) use ($detailName) {
-            $query->where('value','like', "%{$detailName}%");
-        })->paginate(10);
+    public function testProduct(FilterRequest $request)
+    {
+        $data = $request->validated();
+        $filter = app()->make(ProductFilter::class,['queryParams'=>array_filter($data)]);
+        $product = Product::filter($filter)->paginate(10);
         dump($product);
     }
 }
