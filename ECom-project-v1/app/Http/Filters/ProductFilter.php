@@ -26,11 +26,13 @@ class ProductFilter extends AbstractFilter
 
     public function title(Builder $builder, $value)
     {
+//   echo('title');
         $builder->where('title', 'like', "%{$value}%");
     }
 
     public function detail(Builder $builder, $value)
     {
+//        dump('detail');
         $builder->whereHas('details', function ($query) use ($value) {
             $query->where('value', 'like', "%{$value}%");
         });

@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Detail_title extends Model
 {
     use HasFactory;
+    protected $guarded=false;
 }

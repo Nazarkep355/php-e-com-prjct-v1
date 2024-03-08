@@ -10,6 +10,7 @@ class Product extends Model
 {
     use HasFactory;
     use Filterable;
+    protected $guarded=false;
     public function details()
     {
         return $this->hasMany(Detail::class);
