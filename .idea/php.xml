@@ -130,6 +130,7 @@
       <path value="$PROJECT_DIR$/ECom-project-v1/vendor/graham-campbell/result-type" />
       <path value="$PROJECT_DIR$/ECom-project-v1/vendor/composer" />
       <path value="$PROJECT_DIR$/ECom-project-v1/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/ECom-project-v1/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />

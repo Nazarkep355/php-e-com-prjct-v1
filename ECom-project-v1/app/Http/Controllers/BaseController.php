@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\PostService;
+use App\Models\Product;
+use App\Services\ProductService;
 
 class BaseController extends Controller
 {   public $service;
-    public function __construct(PostService $service)
+    public function __construct(ProductService $service)
     {
         $this->service= $service;
     }

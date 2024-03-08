@@ -22,6 +22,7 @@ class FilterRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'page'=>'integer',
             'detail'=>'string',
             'title'=>'string',
             'category'=>'string',
