@@ -4,7 +4,7 @@
 
     <div class="container text-center">
         <div>
-            {{$products->links()}}
+            {{$products->withQueryString()->links()}}
         </div>
         <div class="row row-cols-4">
             @foreach($products as $product)

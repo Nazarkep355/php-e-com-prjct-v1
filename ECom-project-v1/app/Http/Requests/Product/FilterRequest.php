@@ -23,9 +23,9 @@ class FilterRequest extends FormRequest
     {
         return [
             'page'=>'integer',
-            'detail'=>'string',
-            'title'=>'string',
-            'category'=>'string',
+            'detail'=>'',
+            'title'=>'',
+            'category'=>'',
             'category_id'=>'integer',
             'min_price'=>'numeric',
             'max_price'=>'numeric',

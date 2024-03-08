@@ -22,4 +22,8 @@ class ProductController extends BaseController
         $product =$this->service->findProduct($id);
         return(view('product',compact('product')));
     }
+    public function search()
+    {
+        return view('search');
+    }
 }
