@@ -11,4 +11,9 @@ class StringController extends Controller
     {   $string = $request->string;
         return $processor->process($string);
     }
+    public function count(StringProcessor $processor, Request $request)
+    {
+        $string = $request->string;
+        return $processor->count($string);
+    }
 }
