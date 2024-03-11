@@ -26,7 +26,9 @@ Route::get('search',[\App\Http\Controllers\ProductController::class,'search'])
 
 Route::get('/api/product/{id}',[\App\Http\Controllers\ProductController::class,'jsonProduct']);
 
+Route::group(['namespace'=>'api','middleware'=>'pass-check'],function (){
+    Route::get('/api/process', [\App\Http\Controllers\StringController::class, 'process']);
 
-Route::get('/api/process', [\App\Http\Controllers\StringController::class, 'process']);
+    Route::get('/api/count',[\App\Http\Controllers\StringController::class,'count']);
+});
 
-Route::get('/api/count',[\App\Http\Controllers\StringController::class,'count']);
