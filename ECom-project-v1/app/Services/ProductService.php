@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Http\Filters\ProductFilter;
+use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Illuminate\Support\Facades\Cache;
 
@@ -24,10 +25,15 @@ class ProductService
     }
 
     public function findProduct($id)
-
     {
         return Cache::remember('product' . $id, 60 * 15, function () use ($id) {
             return Product::find($id);
         });
+    }
+
+    public function findProductJSON($id)
+    {
+        $product = $this->findProduct($id);
+        return new ProductResource($product);
     }
 }

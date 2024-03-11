@@ -26,4 +26,8 @@ class ProductController extends BaseController
     {
         return view('search');
     }
+    public function jsonProduct($id)
+    {   return $this->service->findProductJSON($id);
+
+    }
 }

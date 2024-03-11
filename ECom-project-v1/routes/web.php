@@ -23,3 +23,4 @@ Route::get('/product/{id}',[\App\Http\Controllers\ProductController::class,
     'product'])->name('product.id');
 Route::get('search',[\App\Http\Controllers\ProductController::class,'search'])
 ->name('search');
+Route::get('/api/product/{id}',[\App\Http\Controllers\ProductController::class,'jsonProduct']);
